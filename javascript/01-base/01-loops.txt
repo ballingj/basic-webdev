@@ -1,0 +1,35 @@
+const todos = [
+  "clean room",
+  "brush teeth",
+  "exercise",
+  "study javascript",
+  "eat healthy",
+]
+
+// for loop
+let todosLength = todos.length;
+for (let i=0; i < todos.length; i++) {
+  //console.log(i);
+  console.log(i, todos[i])
+}
+
+// forEach loop
+todos.forEach(function(todo) {
+  console.log(todo);
+})
+
+//while loop
+let counter = 0
+while (counter < todos.length) {
+  console.log("while", counter, todos[counter]);
+  //console.log(todos[counter])
+  counter++
+}
+
+let counterTwo = 0
+do {
+  console.log("do while", counterTwo, todos[counterTwo]);
+  //console.log(todos[counterTwo])
+  counterTwo++;
+} while (counterTwo < todos.length);
+
