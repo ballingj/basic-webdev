@@ -56,7 +56,12 @@ listItems.forEach(item => item.addEventListener("click", function() {
 }))
 
 // eventListener for del
+// del.forEach(itemToDel => itemToDel.addEventListener("click", function() {
+//   idToDel = itemToDel.parentElement.getAttribute("id")
+//   document.querySelector(`#${idToDel}`).remove();
+// }))
+
+//much shorter than above
 del.forEach(itemToDel => itemToDel.addEventListener("click", function() {
-  idToDel = itemToDel.parentElement.getAttribute("id")
-  document.querySelector(`#${idToDel}`).remove();
+  itemToDel.parentElement.remove();
 }))
