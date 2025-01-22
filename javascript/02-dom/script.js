@@ -62,6 +62,7 @@ listItems.forEach(item => item.addEventListener("click", function() {
 // }))
 
 //much shorter than above
+// eventListener for del
 del.forEach(itemToDel => itemToDel.addEventListener("click", function() {
   itemToDel.parentElement.remove();
 }))
