@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adv Functions</title>
+</head>
+
+<body>
+  <h1>Advance Functions: Closures, Currying,</h1>
+
+
+  <script>
+
+    // Function that returns a function to define what Closures is
+    const first = () => {
+      const greet = 'Helloo';
+      const second = () => console.log(greet);
+      return second;
+    }
+
+    const newFunc = first();
+
+    // I. Closures - a function ran; it executed; it's never going to execute again.  However it will remember
+    // the references to the variables, so the child scope always have access to the parent scops.
+    // Reference:  https://developer.mozilla.org/en-US/docs/Web/JavaScript/Closures
+    
+    // more examples
+    const makeAdder = (x) => (y) => x + y;
+
+    const add5 = makeAdder(5);
+    const add10 = makeAdder(10);
+
+    console.log(add5(2)); // 7
+    console.log(add10(2)); // 12
+
+    
+    
+    // II. Currying - a process of converting a function that accepts multiple arguments into
+    // a function that takes those arguments one at a time
+    // Ref: https://builtin.com/software-engineering-perspectives/currying-javascript
+
+    const multiply = (a, b) => a * b;   // a function that takes a & b
+    multiply(2, 5)   // 10
+
+    const curriedMultiply = (a) => (b) => a * b;    
+    curriedMultiply(2)      // b => 2 * b
+    curriedMultiply(2)(5)   // 10
+
+    const multiplyByTwo = curriedMultiply(2);
+    const multiplyByThree = curriedMultiply(3);
+    const multiplyByFour = curriedMultiply(4);
+
+    console.log(multiplyByTwo(5))      // 10
+    console.log(multiplyByThree(5))    // 15
+    console.log(multiplyByFour(5))    // 20
+
+    // III. Compose - act of putting two functions together to form a third function where the output of one function is input to the other
+    // Combines functions from right to left.  The output of each function is passed as the input to the function on its left.
+    // Allows for creating complex transformations by composing smaller functions. -->
+
+    const compose = (f, g) => (h) => f(g(h));
+
+    const sum = (num) => num + 1;
+
+    compose(sum, sum)(5);
+
+    /* Let's break this down:
+    1. compose(sum, sum) returns a function (h) => sum(sum(h)).
+    2. You then call this function with 5.
+      So, sum(sum(5)) is evaluated as follows:
+      - sum(5) returns 5 + 1 which is 6.
+      - Then sum(6) returns 6 + 1 which is 7.
+    3. Hence, compose(sum, sum)(5) evaluates to 7 */
+
+    
+    /* IV - Write functions that minimizes side effects || Functional purity.
+    - alwaws return a value 
+    - do not alter values of variables outside of functions
+    */ 
+
+  </script> 
+</body>
+
+</html>

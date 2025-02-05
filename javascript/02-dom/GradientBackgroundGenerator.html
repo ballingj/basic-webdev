@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Gradient Background</title>
+    <link rel="stylesheet" type="text/css" href="GradientBackgroundGenerator.css">
+  </head>
+  <body id="gradient">
+    <h1>Background Generator</h1>
+    <input class="color1" type="color" name="color1" value="#00ff00">
+    <input class="color2" type="color" name="color2" value="#ff0000">
+    <h2>Current CSS Background</h2>
+    <h3></h3>
+
+
+    <script type="text/javascript">
+    var css = document.querySelector("h3");
+    var color1 = document.querySelector(".color1");
+    var color2 = document.querySelector(".color2");
+    var body = document.getElementById("gradient")
+
+    // console.log(body);
+    // body.style.background = "yellow";
+    // console.log(css);
+    // console.log(color1);
+    // console.log(color2);
+
+    function applyGradient(){
+      body.style.background = "linear-gradient(to right, " + color1.value + ", " + color2.value + ")";
+      css.textContent = body.style.background + ";";
+    }
+
+    color1.addEventListener("input", applyGradient);
+
+    color2.addEventListener("input", applyGradient);
+
+
+
+
+    </script>
+
+  </body>
+</html>

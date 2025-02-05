@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Adv Arrays</title>
+</head>
+<body>
+  <h1>Advanced Arrays </h1>
+  
+
+  <script>
+    // Advanced Functions
+    const array = [1, 2, 10, 14];
+    const double = [];
+
+    // forEach only iterates through arrays; it does not return value 
+    const newArray = array.forEach((num) => {
+      double.push(num *2);
+    })
+    console.log('forEach', double);
+    console.log('forEach', newArray);   // undefined
+
+    // map, filter, reduce
+
+    // map: unlike forEach, map returns a value by adding each iteration result as part of new array
+    const mapArray = array.map((num) => num * 2);
+    console.log('map', mapArray)
+
+    // filter: only include the element of array as it iterate and meets the condition
+    const filterArray = array.filter((num) => num > 5);  // only elements that is greater than 5
+    console.log('fiter', filterArray);
+
+    // reduce: can do a filter and map at the same time
+    const reduceArray = array.reduce((accumulator, num) => {return accumulator + num}, 3);  // 3 is a starting accumulator - 0 is default if left out
+    console.log('reduce', reduceArray);
+
+    /* 
+    Yes, you can indeed use the reduce method to achieve similar results as map and filter. The reduce method is very 
+    versatile and can be used to transform and filter elements in an array by accumulating a result.
+    
+    Here's a quick overview:
+
+    Mapping with reduce: You can use reduce to create a new array with transformed values, similar to map.
+
+    ```
+    const array = [1, 2, 3, 4, 5];
+    const mappedArray = array.reduce((accumulator, currentValue) => {
+    accumulator.push(currentValue * 2); // Transformation logic (e.g., multiply by 2)
+    return accumulator;
+    }, []);
+    console.log(mappedArray); // Output: [2, 4, 6, 8, 10]
+    ```
+    
+    Filtering with reduce: You can also use reduce to create a new array with filtered values, similar to filter.
+
+    ```
+    const array = [1, 2, 3, 4, 5];
+    const filteredArray = array.reduce((accumulator, currentValue) => {
+    if (currentValue % 2 === 0) { // Filtering logic (e.g., keep even numbers)
+      accumulator.push(currentValue);
+    }
+    return accumulator;
+    }, []);
+    console.log(filteredArray); // Output: [2, 4]
+    ```
+    
+    Combining map and filter with reduce: You can combine the logic of both map and filter in a single reduce operation.
+    ```
+    const array = [1, 2, 3, 4, 5];
+    const mappedAndFilteredArray = array.reduce((accumulator, currentValue) => {
+    if (currentValue % 2 === 0) { // Filtering logic (e.g., keep even numbers)
+      accumulator.push(currentValue * 2); // Transformation logic (e.g., multiply by 2)
+    }
+    return accumulator;
+    }, []);
+    console.log(mappedAndFilteredArray); // Output: [4, 8]
+    ```
+    
+    In the third example, reduce is used to first filter out the odd numbers and then transform the even numbers by multiplying them by 2.
+    By using reduce, you have more control and can combine multiple operations in a single pass over the array. This can be more efficient in certain scenarios.    
+    */
+
+  </script>
+</body>
+</html>

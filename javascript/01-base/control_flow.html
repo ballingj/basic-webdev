@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>control flow</title>
+</head>
+<body>
+  <h1>Control Flow</h1>
+
+  <script>
+    // ternary operator
+    let answer = true ? "you are true" : "you are not valid"
+    let answer2 = false ? "you are true" : "you are not valid"
+
+    // switch
+    function moveCommand(direction) {
+      let whatHappens;
+      switch (direction) {
+        case "forward":
+          whatHappens = "you encounter a monster";
+          break;
+        case "back":
+          whatHappens = "you encounter a zombie";
+          break;  
+        case "right":
+          whatHappens = "you found a river";
+          break;
+        case "left":
+          whatHappens = "you found your friend";
+          break;
+        default:
+          whatHappens = "please enter a valid direction: 'forward' 'back' 'right' or 'left'";
+      }
+      return whatHappens;
+    }
+
+    // //#1 change this function into a ternary and assign it to variable called experiencePoints
+    /*-- function experiencePoints() {
+      if (winBattle()) {
+        return 10;
+      } else {
+        return 1;
+      }
+    } */
+
+    let experiencePoints = winBattle() ? 10 : 1;
+
+    function winBattle() {
+      return false;
+    }
+
+    winBattle()
+    console.log("gained ", experiencePoints)
+
+    
+    //Using this function, answer the questions below:
+      function moveCommand(direction) {
+        var whatHappens;
+        switch (direction) {
+          case "forward":
+            break;
+            whatHappens = "you encounter a monster";
+          case "back":
+            whatHappens = "you arrived home";
+            break;
+            break;
+          case "right":
+            return whatHappens = "you found a river";
+            break;
+          case "left":
+            break;
+            whatHappens = "you run into a troll";
+            break;
+          default:
+            whatHappens = "please enter a valid direction";
+        }
+        return whatHappens;
+      }
+
+      //#2 return value when moveCommand("forward");
+
+      //#3 return value when moveCommand("back");
+
+      //#4 return value when moveCommand("right");
+
+      //#5 return value when moveCommand("left");
+
+      //BONUS: practice makes perfect. Go and write your own switch function. It takes time to get used to the syntax!
+
+  </script>
+</body>
+</html>
