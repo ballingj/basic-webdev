@@ -1,0 +1,51 @@
+const basket = ['apples', 'oranges', 'grapes'];
+const detailedBasket = {
+  apples: 5,
+  oranges: 10,
+  grapes: 1000
+}
+
+//1
+for (let i = 0; i < basket.length; i++) {
+  console.log(basket[i]);
+}
+
+//2
+basket.forEach(item => {
+  console.log(item);
+})
+
+// for of
+for (item of basket) {
+  console.log(item);
+}
+
+// for in
+for (item in detailedBasket) {
+  console.log(item);
+}
+
+
+/ for of loop - iterate
+//used to loop through iterable objects, such as arrays and strings
+
+for (todo of todos) {
+  console.log(todo)
+}
+
+
+// for in loop -  enumerate over objects
+// used to loop through the properties of an object.
+
+const colorObj = {
+  color1: 'red',
+  color2: 'blue',
+  color3: 'green',
+  color4: 'yellow',
+  color5: 'orange',
+  color6: 'purple'
+};
+
+for (key in colorObj) {
+  console.log(colorObj[key]);
+}

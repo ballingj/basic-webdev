@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Objects</title>
+</head>
+<body>
+  <h1>Objects</h1>
+  <img src="./refType.jpg" alt="" style="width: 400px">
+
+  <script>
+    // Reference Type
+    
+    // Objects are Reference Type
+    let object1 = {value: 10};
+    let object2 = object1;
+    let object3 = {value: 10};
+
+    // context vs scope
+    // context tells you where we are in reference to object
+    console.log(this)   //windows object
+
+    const object4 = {
+      a: function() {
+        console.log(this);  //{a: f} this points to -- the a object
+      }
+    }
+
+    // instantiation - copy of an object
+
+    // Class
+    class Player {
+      constructor(name, type) {
+        this.name = name;
+        this.type = type;
+      }
+      introduce() {
+        console.log(`Hi I am ${this.name}, I'm a ${this.type}`);
+      }
+    }
+
+    // Class Inheritance
+    class Wizard extends Player {
+      constructor(name, type) {
+        super(name, type)
+      }
+      play() {
+        console.log(`WEEEEE I'm a ${this.type}`);
+      }
+    }
+
+    // Instantiation
+    const wizard1 = new Wizard('Shelly', 'Healer');
+    const wizard2 = new Wizard('Shawn', 'Dark Magic');
+
+    localStorage.setItem('wizard1', wizard1.name)
+
+    
+  </script>
+</body>
+</html>

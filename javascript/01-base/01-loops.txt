@@ -26,6 +26,7 @@ while (counter < todos.length) {
   counter++
 }
 
+// Do while loop
 let counterTwo = 0
 do {
   console.log("do while", counterTwo, todos[counterTwo]);
@@ -33,3 +34,27 @@ do {
   counterTwo++;
 } while (counterTwo < todos.length);
 
+
+// for of loop - iterate
+//used to loop through iterable objects, such as arrays and strings
+
+for (todo of todos) {
+  console.log(todo)
+}
+
+
+// for in loop -  enumerate over objects
+// used to loop through the properties of an object.
+
+const colorObj = {
+  color1: 'red',
+  color2: 'blue',
+  color3: 'green',
+  color4: 'yellow',
+  color5: 'orange',
+  color6: 'purple'
+};
+
+for (key in colorObj) {
+  console.log(colorObj[key]);
+}

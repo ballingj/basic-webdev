@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ES8</title>
+</head>
+<body>
+  <h1>ES8</h1>
+
+
+  <script>
+    // 1) padstart() & padend()
+    // adds padding to strings by number indicated
+    'This is a string'.padStart(10)  // '          This is a string'
+
+    'This is a string'.padEnd(10)  // 'This is a string          '
+
+    // 2) allowing ending comma in parameter list
+    const fun = (a,b,c,d,) => {
+      console.log(a);
+    }
+
+    fun(1,2,3,4)
+
+    // 3) addition of Object values and Object entries 
+    /* 
+    Object.keys (existing)
+    Object.values
+    Object.entries
+    */
+
+    let obj = {
+      username0: 'Santa',
+      username1: 'Rudolph',
+      username3: 'Mr.Grinch',
+    }
+
+    // Keys
+    Object.keys(obj).forEach((key, index) => {
+      console.log(key, obj[key]);
+    })
+    /*
+    username0 Santa 
+    username1 Rudolph
+    username3 Mr. Grinch
+    */
+
+    // Values
+    Object.values(obj).forEach(value => console.log(value));
+    /*
+    Santa
+    Rudolph
+    Mr. Grinch
+    */
+
+    // Entries
+    Object.entries(obj).forEach(entry => console.log(entry));
+
+    /*
+    Array [ "username0", "Santa" ]
+    Array [ "username1", "Rudolph" ]
+    Array [ "username3", "Mr. Grinch" ]
+    */
+
+    // Application of above
+    usernames = Object.entries(obj).map(entry => entry[1] + entry[0].replace('username', '')); 
+    console.log(usernames);  // Array(3) [ "Santa0", "Rudolph1", "Mr.Grinch3" ]
+
+    // 4) Async Await 
+    // covered in standalone lessons
+    
+
+  </script>
+</body>
+</html>

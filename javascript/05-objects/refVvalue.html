@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ref vs Value</title>
+</head>
+<body>
+  <h1>Pass by Reference Vs Pass by Value</h1>
+
+
+  <script>
+    // Pass bt Reference or Pass by Value
+    
+    // Primitive types are pass by value
+    let a = 5;
+    let b = a;
+    b++;
+    console.log(a)  // 5
+    console.log(b)  // 6  because b made a copy of a that is independent locatio in the memory
+    
+    
+    // Objects are pass by Reference
+    let obj1 = {name: 'Yao', password: '123'}
+    let obj2 = obj1
+    console.log(obj1)  // {name: 'yao', password: '123'}
+    obj2.password = 'easypeasy';
+
+    console.log(obj1)  // {name: 'yao', password: 'easypeasy'}
+    console.log(obj2)  // {name: 'yao', password: 'easypeasy'}
+
+    // another example using array
+    let c = [1,2,3,4,5];
+    let d = c;
+    d.push(152346);
+    console.log(c)  // [1, 2, 3, 4, 5, 152346]
+
+
+  </script>
+</body>
+</html>
