@@ -17,5 +17,3 @@ const flatteneD = [[0,1], [2,3], [4,5]].reduce(
     debugger;
     return accumulator.concat(array)
   }, []);
-
-  
