@@ -130,6 +130,22 @@ fetchUsers();
 
 ```
 
+### Arrow function ( () => {} ) in class based methods
+It is necessary to use the arrow function to take advantage of keyword 'this'
+
+```js
+componentDidMount() {
+    const url = 'https://jsonplaceholder.typicode.com/users'
+
+    const fetchUsers = async () => {
+      const response = await fetch(url);
+      const data = await response.json();
+      this.setState({ robots: data })
+    }
+    fetchUsers();
+  }
+```
+
 ### Array of urls
 ``` js
 const urls = [
